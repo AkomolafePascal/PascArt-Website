@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – PascArt</title>
+ <!-- Font Awesome (paste once in head) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="auth-page">
+  <!-- Back Home Button -->
+  <a href="index.html" class="back-home">← Back to Home</a>
+
+  <!-- Contact Form -->
+  <section class="auth-box">
+    <h2>Contact Me</h2>
+    <p class="sub">Send me a message or inquiry below.</p>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="contactResponse" class="confirmation"></p>
+  </section>
+
+  <!-- Commission Form -->
+  <section class="auth-box">
+    <h2>Commission an Artwork</h2>
+
+    <form id="commissionForm">
+      <select id="size" required>
+        <option value="">--Select Size--</option>
+        <option value="A4">A4 – ₦130,000</option>
+        <option value="A3">A3 – ₦140,000</option>
+        <option value="A2">A2 – ₦150,000</option>
+        <option value="A1">A1 – ₦260,000</option>
+        <option value="Custom">Custom – ₦170,000</option>
+      </select>
+
+      <input type="text" id="location" placeholder="Your Location" required />
+      <textarea id="details" rows="4" placeholder="Describe your idea..." required></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+    <p id="commissionResponse" class="confirmation"></p>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <p>Connect with me:</p>
+  <div class="footer-icons">
+    <a href="https://wa.me/2348120443938" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/pascalakomolafe" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/pascalakomolafe?s=21" target="_blank" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</footer>
+
+  <script>
+    // Contact form message
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('contactResponse').textContent = "✅ Message sent successfully!";
+      this.reset();
+      setTimeout(() => document.getElementById('contactResponse').textContent = "", 4000);
+    });
+
+    // Commission form message
+    document.getElementById('commissionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('commissionResponse').textContent = "🎨 Your commission request has been received!";
+      this.reset();
+      setTimeout(() => document.getElementById('commissionResponse').textContent = "", 4000);
+    });
+  </script>
+</body>
+</html>
